@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humanitarno Zdruzenie Labunishta Italia</title>
+  <meta name="description" content="Pagina ufficiale Humanitarno Zdruzenie Labunishta Italia - contatti e donazioni." />
+  <style>
+    :root{
+      --blue:#062b5f;
+      --blue2:#001f49;
+      --text:#082653;
+      --yellow:#ffc52e;
+      --shadow:0 18px 45px rgba(0,0,0,.16);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      width:100%;
+      min-height:100%;
+      overflow:hidden;
+    }
+    body{
+      height:100vh;
+      height:100svh;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#f6f6f6,#e9eef3);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:10px;
+      color:var(--text);
+    }
+    .card{
+      width:100%;
+      max-width:430px;
+      height:calc(100svh - 20px);
+      max-height:820px;
+      overflow:hidden;
+      border-radius:26px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+    .hero{
+      flex:1;
+      min-height:0;
+      padding:22px 24px 18px;
+      text-align:center;
+      background:
+        linear-gradient(rgba(255,255,255,.76),rgba(255,255,255,.90)),
+        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80') center/cover;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .logo{
+      width:178px;
+      height:178px;
+      object-fit:contain;
+      border-radius:50%;
+      margin:0 auto 12px;
+      background:#fff;
+    }
+    h1{
+      font-size:31px;
+      line-height:1.12;
+      font-weight:800;
+      color:#082a5b;
+      letter-spacing:-.7px;
+      margin-bottom:14px;
+    }
+    .buttons{display:flex;flex-direction:column;gap:8px;margin-top:0}
+    .btn{
+      display:flex;
+      align-items:center;
+      min-height:50px;
+      padding:10px 16px;
+      border-radius:10px;
+      text-decoration:none;
+      color:#fff;
+      background:linear-gradient(90deg,var(--blue),var(--blue2));
+      box-shadow:0 5px 10px rgba(0,31,73,.14);
+      font-weight:700;
+      border:0;
+      cursor:pointer;
+      width:100%;
+      font-family:inherit;
+    }
+    .icon{font-size:25px;width:38px;text-align:left;flex:0 0 38px}
+    .btn-text{flex:1;text-align:left;font-size:18px;line-height:1.1}
+    .small{display:block;font-size:13.5px;font-weight:500;margin-top:4px;opacity:.96;word-break:break-all}
+    .arrow{font-size:30px;font-weight:300;opacity:.95}
+    .whatsapp{
+      background:linear-gradient(90deg,#128C7E,#075E54);
+    }
+    .wa-logo{width:35px;height:35px;margin-right:7px;flex:0 0 35px;display:flex;align-items:center}
+    .wa-logo svg{width:35px;height:35px;display:block}
+    .paypal{
+      margin-top:10px;
+      background:linear-gradient(90deg,#ffbf20,#ffd34d);
+      color:#061b38;
+    }
+    .paypal-logo{width:39px;height:39px;margin-right:10px;flex:0 0 39px}
+    .bank{
+      margin-top:10px;
+      display:grid;
+      grid-template-columns:42px 1fr 44px;
+      align-items:center;
+      gap:10px;
+      background:#eef5ff;
+      border:1px solid #dce8f8;
+      border-radius:10px;
+      padding:11px 12px;
+      text-align:left;
+      color:#061b38;
+    }
+    .bank .icon{color:#0b66d8;font-size:32px;width:42px;text-align:center}
+    .bank-title{font-size:15.5px;font-weight:800;margin-bottom:3px}
+    .iban{font-size:14px;font-weight:700;line-height:1.25;word-break:break-all}
+    .copy{
+      border:0;
+      background:transparent;
+      color:#2563eb;
+      cursor:pointer;
+      border-radius:10px;
+      padding:6px;
+      width:44px;
+      height:44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .copy svg{width:28px;height:28px;display:block}
+    footer{
+      background:linear-gradient(90deg,var(--blue),var(--blue2));
+      color:#fff;
+      text-align:center;
+      padding:12px 14px 13px;
+      font-size:12px;
+      line-height:1.6;
+    }
+    .popup-overlay{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      z-index:999;
+      justify-content:center;
+      align-items:center;
+      padding:18px;
+      backdrop-filter:blur(5px);
+    }
+    .popup-box{
+      width:100%;
+      max-width:420px;
+      background:#fff;
+      border-radius:24px;
+      padding:20px;
+      box-shadow:0 10px 40px rgba(0,0,0,.25);
+      animation:popupShow .25s ease;
+    }
+    @keyframes popupShow{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+    .popup-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .popup-header h2{font-size:22px;color:#082a5b;margin:0;line-height:1.2}
+    .close{border:0;background:#eef5ff;color:#082a5b;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+    .call-option{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      text-decoration:none;
+      background:linear-gradient(90deg,var(--blue),var(--blue2));
+      color:#fff;
+      padding:15px 16px;
+      border-radius:16px;
+      margin-bottom:10px;
+      box-shadow:0 5px 10px rgba(0,31,73,.14);
+    }
+    .call-option strong{font-size:18px}
+    .call-option p{font-size:15px;margin-top:4px;opacity:.95}
+    .whatsapp-option{background:linear-gradient(90deg,#128C7E,#075E54)}
+    .call-icon{font-size:24px}
+    @media(max-width:380px){
+      body{padding:6px}
+      .card{height:calc(100svh - 12px);border-radius:22px}
+      .hero{padding:14px 14px 12px}
+      h1{font-size:26px;margin-bottom:10px}
+      .btn{min-height:46px;padding:8px 12px}
+      .btn-text{font-size:17px}
+      .small{font-size:12px}
+      .iban{font-size:12.5px}
+      .bank{grid-template-columns:34px 1fr 38px;gap:7px;padding:9px 9px}
+      .bank .icon{font-size:26px;width:34px}
+      .copy{width:38px;height:38px;padding:5px}.copy svg{width:24px;height:24px}
+      footer{padding:9px 10px 10px;font-size:11.5px}
+    }
+    @media(max-height:740px){
+      .hero{padding-top:14px;padding-bottom:12px}
+      .logo{margin-bottom:8px}
+      h1{font-size:27px;margin-bottom:10px}
+      .btn{min-height:44px;padding:8px 14px}
+      .btn-text{font-size:17px}
+      .small{font-size:12px;margin-top:2px}
+      .paypal-logo{width:34px;height:34px;flex-basis:34px}
+      .wa-logo,.wa-logo svg{width:31px;height:31px;flex-basis:31px}
+      .bank{padding:9px 10px}
+      footer{padding:9px 10px 10px;font-size:11.5px}
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <section class="hero">
+      <img class="logo" src="logo.jpeg" alt="Logo Humanitarno Zdruzenie Labunishta Italia" />
+      <h1>Humanitarno Zdruzenie<br>Labunishta Italia</h1>
+
+      <div class="buttons">
+        <button class="btn" type="button" onclick="openCallPopup()"><span class="icon">☎</span><span class="btn-text">Chiama</span><span class="arrow">›</span></button>
+        <button class="btn whatsapp" type="button" onclick="openWhatsappPopup()"><span class="wa-logo" aria-hidden="true"><svg viewBox="0 0 32 32"><path fill="#25D366" d="M16 2.7A13.2 13.2 0 0 0 4.8 22.9L3 29l6.3-1.7A13.2 13.2 0 1 0 16 2.7z"/><path fill="#fff" d="M23.5 19.4c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.7-.2-1 .2-.3.4-1.1 1.3-1.3 1.6-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-1-2.3-1.3-3.1-.3-.8-.7-.7-1-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.2 1 .4 1.8.7 2.4.9 1 .3 1.9.3 2.6.2.8-.1 2.4-1 2.8-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5z"/></svg></span><span class="btn-text">WhatsApp</span><span class="arrow">›</span></button>
+        <a class="btn" href="mailto:info.labunishta.italia@gmail.com"><span class="icon">✉</span><span class="btn-text">Email<span class="small">info.labunishta.italia@gmail.com</span></span><span class="arrow">›</span></a>
+      </div>
+
+      <a class="btn paypal" href="https://paypal.me/hzlabunishtaitalia" target="_blank" rel="noopener">
+        <svg class="paypal-logo" viewBox="0 0 124 146" aria-hidden="true"><path fill="#003087" d="M46.3 122.8H20.9c-1.7 0-3-1.5-2.7-3.2L35.6 9.2C36 6.8 38 5 40.5 5h42.1c25.8 0 43.6 13.2 39.6 39.4-4.4 29.6-24.5 42.3-50.2 42.3H56.4c-2.4 0-4.5 1.8-4.9 4.2l-5.2 31.9z"/><path fill="#009cde" d="M56.4 86.7h15.5c25.7 0 45.8-12.7 50.2-42.3.3-1.8.4-3.6.5-5.3 10.6 5.4 15.4 16.1 12.9 32.7-4 26.2-21.9 39.4-47.6 39.4H76.1c-2.4 0-4.5 1.8-4.9 4.2l-4 25.4c-.3 1.7-1.7 3-3.4 3H41.7l9.8-52.9c.4-2.4 2.5-4.2 4.9-4.2z"/></svg>
+        <span class="btn-text">Dona ora con <strong style="color:#006fbf">PayPal</strong></span><span class="arrow">›</span>
+      </a>
+
+      <div class="bank">
+        <span class="icon">🏦</span>
+        <div><div class="bank-title">Dona con Bonifico Bancario</div><div class="iban">IBAN: IT65Z0200861624000107426851</div></div>
+        <button class="copy" onclick="copyIban()" title="Copia IBAN" aria-label="Copia IBAN">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <footer>
+      © 2026 Humanitarno Zdruzenie Labunishta Italia<br>
+      Tutti i diritti riservati
+    </footer>
+  </main>
+
+  <div id="callPopup" class="popup-overlay" aria-hidden="true">
+    <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="callTitle">
+      <div class="popup-header">
+        <h2 id="callTitle">Scegli chi chiamare</h2>
+        <button class="close" onclick="closeCallPopup()" aria-label="Chiudi">×</button>
+      </div>
+      <a class="call-option" href="tel:+393534282315"><div><strong>Drini</strong><p>+39 353 428 2315</p></div><span class="call-icon">☎</span></a>
+      <a class="call-option" href="tel:+393772960422"><div><strong>Arben</strong><p>+39 377 296 0422</p></div><span class="call-icon">☎</span></a>
+      <a class="call-option" href="tel:+393894548861"><div><strong>Anes</strong><p>+39 389 454 8861</p></div><span class="call-icon">☎</span></a>
+      <a class="call-option" href="tel:+393894496495"><div><strong>Haris</strong><p>+39 389 449 6495</p></div><span class="call-icon">☎</span></a>
+    </div>
+  </div>
+
+  <div id="whatsappPopup" class="popup-overlay" aria-hidden="true">
+    <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="whatsappTitle">
+      <div class="popup-header">
+        <h2 id="whatsappTitle">Scegli a chi scrivere</h2>
+        <button class="close" onclick="closeWhatsappPopup()" aria-label="Chiudi">×</button>
+      </div>
+      <a class="call-option whatsapp-option" href="https://chat.whatsapp.com/BX2s4rIeO6LJdpw2bUPdlZ?mode=gi_t" target="_blank" rel="noopener"><div><strong>Entra nel gruppo WhatsApp</strong><p>Humanitarno Zdruzenie Labunishta Italia</p></div><span class="call-icon">👥</span></a>
+      <a class="call-option whatsapp-option" href="https://wa.me/393534282315" target="_blank" rel="noopener"><div><strong>Drini</strong><p>+39 353 428 2315</p></div><span class="call-icon">💬</span></a>
+      <a class="call-option whatsapp-option" href="https://wa.me/393772960422" target="_blank" rel="noopener"><div><strong>Arben</strong><p>+39 377 296 0422</p></div><span class="call-icon">💬</span></a>
+      <a class="call-option whatsapp-option" href="https://wa.me/393894548861" target="_blank" rel="noopener"><div><strong>Anes</strong><p>+39 389 454 8861</p></div><span class="call-icon">💬</span></a>
+      <a class="call-option whatsapp-option" href="https://wa.me/393894496495" target="_blank" rel="noopener"><div><strong>Haris</strong><p>+39 389 449 6495</p></div><span class="call-icon">💬</span></a>
+    </div>
+  </div>
+
+  <script>
+    function openCallPopup(){
+      const popup = document.getElementById('callPopup');
+      popup.style.display = 'flex';
+      popup.setAttribute('aria-hidden','false');
+    }
+    function closeCallPopup(){
+      const popup = document.getElementById('callPopup');
+      popup.style.display = 'none';
+      popup.setAttribute('aria-hidden','true');
+    }
+    function openWhatsappPopup(){
+      const popup = document.getElementById('whatsappPopup');
+      popup.style.display = 'flex';
+      popup.setAttribute('aria-hidden','false');
+    }
+    function closeWhatsappPopup(){
+      const popup = document.getElementById('whatsappPopup');
+      popup.style.display = 'none';
+      popup.setAttribute('aria-hidden','true');
+    }
+    document.getElementById('callPopup').addEventListener('click', function(e){
+      if(e.target === this) closeCallPopup();
+    });
+    document.getElementById('whatsappPopup').addEventListener('click', function(e){
+      if(e.target === this) closeWhatsappPopup();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ closeCallPopup(); closeWhatsappPopup(); }
+    });
+    function copyIban(){
+      navigator.clipboard.writeText('IT65Z0200861624000107426851');
+      alert('IBAN copiato');
+    }
+  </script>
+</body>
+</html>
