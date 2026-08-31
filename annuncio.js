@@ -53,7 +53,7 @@ const ANNUNCIO = {
   /* --- DOVE PORTA IL BOTTONE ---
      Lascia così per aprire WhatsApp, oppure scrivi "contatti.html"
      per mandare le persone alla pagina Contatti.              */
-  link: "https://wa.me/393894496495",
+  link: "contatti.html",
 
   /* --- FOTO (facoltativa) ---
      Nome di un'immagine presente nel sito, es. "logo.jpeg".
@@ -65,7 +65,7 @@ const ANNUNCIO = {
         (es. documenti/locandina-cena.pdf)
      2. Scrivi qui sotto lo stesso percorso, tra virgolette.
      Lascia "" per non mostrare nessun PDF.                      */
-  pdf:          "",
+  pdf:          "documenti/locandina-cena.pdf",
   pdfEtichetta:   "Scarica la locandina",
   pdfEtichettaMk: "Преземи го летокот"
 };
