@@ -117,7 +117,7 @@ const ANNUNCIO = {
     '.annPdf{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:10px;text-align:center;background:#fff;border:2px solid #073f2b;color:#073f2b;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:14px}' +
     '.annChiudi{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:#073f2b;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18)}' +
     '.annBox.locandina{max-width:520px;background:transparent;box-shadow:none;overflow:visible}' +
-    '.annBox.locandina img{width:100%;max-height:80vh;object-fit:contain;display:block;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.4);background:#fff}' +
+    '.annBox.locandina img{width:auto;max-width:100%;margin:0 auto;max-height:80vh;object-fit:contain;display:block;border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.4);background:#fff}' +
     '.annBox.locandina .annPdf{max-width:320px;margin:12px auto 0;background:rgba(255,255,255,.95)}' +
     '@media (prefers-reduced-motion:reduce){.annOverlay,.annBox{transition:none}}';
   document.head.appendChild(css);
