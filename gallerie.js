@@ -28,7 +28,7 @@ const GALLERIE = [
            "foto-11.jpg", "foto-12.jpg", "foto-13.jpg", "foto-14.jpg", "foto-15.jpg",
            "foto-16.jpg", "foto-17.jpg", "foto-18.jpg", "foto-19.jpg", "foto-20.jpg",
            "foto-21.jpg", "foto-22.jpg", "foto-23.jpg", "foto-24.jpg", "foto-25.jpg",
-           "foto-26.jpg"],
+           "foto-26.jpg", "foto-27.jpg", "foto-28.jpg", "foto-29.jpg", "foto-30.jpg", "foto-31.jpg", "foto-32.jpg", "foto-33.jpg", "foto-34.jpg", "foto-35.jpg", "foto-36.jpg", "foto-37.jpg", "foto-38.jpg", "foto-39.jpg", "foto-40.jpg", "foto-41.jpg", "foto-42.jpg", "foto-43.jpg", "foto-44.jpg", "foto-45.jpg", "foto-46.jpg", "foto-47.jpg", "foto-48.jpg"],
     titolo: "Donatorska Večer 2026",
     titoloMk: "Донаторска вечер 2026",
     data: "17 ottobre 2026",
