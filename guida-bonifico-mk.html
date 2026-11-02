@@ -14,12 +14,17 @@
   <link href="guida-bonifico.html" hreflang="it" rel="alternate"/>
   <meta content="Упатство за донација | Humanitarno Zdruzenie Labunishta Italia" property="og:title"/>
   <meta content="Како да донирате со банкарска уплата: IBAN, примач, цел на уплата и упатство чекор по чекор." property="og:description"/>
-  <meta content="logo.jpeg" property="og:image"/>
   <meta content="website" property="og:type"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <link href="style.css" rel="stylesheet"/>
+  <link href="wow.css" rel="stylesheet"/>
+  <meta content="https://hzlabunishta.it/og-image.jpg" property="og:image"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="Хуманитарно здружение Лабуништа Италија — Humanitarno Zdruzenie Labunishta Italia" property="og:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
  </head>
  <body>
   <header class="topbar">
@@ -38,10 +43,8 @@
      </div>
     </a>
     <div class="navTools">
-     <a aria-label="Cambia in italiano" class="langSwitch" href="guida-bonifico.html">🇮🇹</a>
-    <button aria-expanded="false" aria-label="Отвори мени" class="menuBtn" onclick="toggleMenu()">
-     ☰
-    </button>
+     <a aria-label="Cambia in italiano" class="langSwitch" href="guida-bonifico.html"><img class="flagImg" src="assets/flags/it.svg" alt="" width="26" height="18"/></a>
+    <button aria-expanded="false" aria-label="Отвори мени" class="menuBtn" onclick="toggleMenu()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
     <nav class="links">
      <a href="index-mk.html">
@@ -171,7 +174,59 @@
      </a>
     </section>
    </div>
+   <div class="wrap">
+    <section class="panel payBox">
+     <div class="payText">
+      <span class="kicker">Брзо и безбедно</span>
+      <h2>Повеќе сакате PayPal?</h2>
+      <p>Донирајте за неколку секунди со картичка или PayPal сметка, без IBAN.</p>
+     </div>
+     <div class="payAction">
+      <a class="contactExactBtn contactExactPaypal payBtn" href="https://paypal.me/hzlabunishtaitalia" rel="noopener" target="_blank">
+       <svg aria-hidden="true" class="paypal-logo" viewbox="0 0 124 146">
+       <path d="M46.3 122.8H20.9c-1.7 0-3-1.5-2.7-3.2L35.6 9.2C36 6.8 38 5 40.5 5h42.1c25.8 0 43.6 13.2 39.6 39.4-4.4 29.6-24.5 42.3-50.2 42.3H56.4c-2.4 0-4.5 1.8-4.9 4.2l-5.2 31.9z" fill="#003087">
+       </path>
+       <path d="M56.4 86.7h15.5c25.7 0 45.8-12.7 50.2-42.3.3-1.8.4-3.6.5-5.3 10.6 5.4 15.4 16.1 12.9 32.7-4 26.2-21.9 39.4-47.6 39.4H76.1c-2.4 0-4.5 1.8-4.9 4.2l-4 25.4c-.3 1.7-1.7 3-3.4 3H41.7l9.8-52.9c.4-2.4 2.5-4.2 4.9-4.2z" fill="#009cde">
+       </path>
+      </svg>
+       <span class="contactExactText">Донирајте со <strong style="color:#006fbf">PayPal</strong></span>
+       <span class="contactExactArrow">›</span>
+      </a>
+     </div>
+    </section>
+   </div>
   </main>
+  <footer class="footer">
+   <div class="wrap footGrid2">
+    <div class="footBrand">
+     <img alt="Лого" src="logo.jpeg"/>
+     <div>
+      <strong>Хуманитарно здружение<br/>Лабуништа Италија</strong>
+      <p>Непрофитно хуманитарно здружение на дијаспората на Лабуништа во Италија, основано на 15 февруари 2026.</p>
+     </div>
+    </div>
+    <nav class="footCol">
+     <h4>Истражете</h4>
+     <a href="chi-siamo-mk.html">Кои сме</a>
+     <a href="programma-attivita-mk.html">Програма</a>
+     <a href="attivita-mk.html">Активности</a>
+     <a href="trasparenza-mk.html">Транспарентност</a>
+     <a href="contatti-mk.html">Контакт</a>
+    </nav>
+    <div class="footCol">
+     <h4>Поддржете нè</h4>
+     <div class="footIban">
+      Банкарска уплата<br/>
+      <span class="iban">IT65Z0200861624000107426851</span><br/>
+      Примач: Humanitarno Zdruzenie Labunishta Italia
+     </div>
+     <a href="guida-bonifico-mk.html">→ Упатство за уплата</a>
+    </div>
+   </div>
+   <div class="wrap footLegal">
+    © 2026 Хуманитарно здружение Лабуништа Италија. Сите права се задржани.
+   </div>
+  </footer>
   <div aria-hidden="true" class="popup-overlay" id="whatsappPopup">
    <div aria-labelledby="whatsappTitle" aria-modal="true" class="popup-box" role="dialog">
     <div class="popup-header">
